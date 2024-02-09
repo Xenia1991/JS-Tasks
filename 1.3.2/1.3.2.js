@@ -1,7 +1,6 @@
 const lettersCount = (str) => {
     let letterObj = {};
     for (let i=0; i<str.length; i++) {
-    //    letterObj[`${str[i].toLowerCase()}`] = str[i].toLowerCase();
     letterObj[`${str[i].toLowerCase()}`] = letterObj[`${str[i].toLowerCase()}`] ? letterObj[`${str[i].toLowerCase()}`] +1 : 1; 
     } 
     return letterObj;
