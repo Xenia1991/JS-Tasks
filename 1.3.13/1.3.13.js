@@ -13,8 +13,8 @@ function replaceItemsMutate(arr, item, replaceItem) {
     return arr;
 }
 
-console.log(replaceItemsClear([1,2,3,4,2], 2, 'a')) //  [1,'a',3,4,'a']
 const arr = [1,2,3,4,2];
+console.log(replaceItemsClear([1,2,3,4,2], 2, 'a')) //  [1,'a',3,4,'a']
 console.log(replaceItemsMutate(arr, 2, 'a'))
 console.log(arr); // [1,'a',3,4,'a']
 
