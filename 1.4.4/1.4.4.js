@@ -1,12 +1,11 @@
 function getStringCount(object) {
    if (typeof(object) === 'object' && !null) {
-   let count = 0;    
+      let count = 0;    
       for (let key in object) {
-    //    console.log(object[key])
        if (typeof(object[key]) === 'string') {
-            count ++;
+          count++;
         } else if (typeof(object[key]) === 'object' && !null) {
-            count = count + getStringCount(object[key]);
+          count = count + getStringCount(object[key]);
         } 
       }
      return count; 
