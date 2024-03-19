@@ -1,6 +1,5 @@
 function isEmpty(obj) {
     const isOwnProperites = Object.getOwnPropertyNames(obj);
-    console.log(isOwnProperites)
     if (isOwnProperites.length === 0 ) {
         return true;
     } else {
