@@ -55,7 +55,7 @@ const book1 = new Book('Капитанская дочь', 'А.С.Пушкин', 
 console.log(book1);
 book1.isAvailable();
 book1.getCurrentReader();
-book1.takeBook('Oleg Andreev');
+book1.takeBook('Sofia Connor');
 book1.getCurrentReader();
 console.log(book1.reader);
 book1.returnBook();
@@ -73,7 +73,7 @@ console.log(book1.author, book1.name);
 book1.isAvailable();
 book1.getCurrentReader();
 console.log(book1.reader);
-book1.takeBook('Xenia Andreeva');
+book1.takeBook('John Smith');
 book1.getCurrentReader();
 
 /*
