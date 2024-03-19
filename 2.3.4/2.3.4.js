@@ -5,52 +5,49 @@ function Book(name, author, year) {
     this.reader = null;
 }
 
-Book.prototype.isAvailable = function () {
-    if (this.reader !== null) {
-        return false;
-    } else {
-        return true;
+Book.prototype = {
+    isAvailable () {
+        if (this.reader !== null) {
+            return false;
+        } else {
+            return true;
+        }
+    },
+    takeBook (readerName) {
+        if(this.isAvailable()) {
+            this.reader = readerName;
+            return true;
+        } else {
+            return false;
+        }
+    },
+    returnBook () {
+        if (this.reader !== null) {
+            this.reader = null;
+            return true;
+        } else {
+            return false;
+        }
+    },
+    changeBookName (newBookName) {
+        if (this.name) {
+            this.name = newBookName;
+            return true;
+        } else {
+            return false;
+        }
+    },
+    changeAuthorName (newAuthorName) {
+        if (this.author) {
+            this.author = newAuthorName;
+            return true;
+        } else {
+            return false;
+        }
+    },
+    getCurrentReader () {
+        return this.reader;
     }
-} 
-
-Book.prototype.takeBook = function (readerName) {
-    if(this.isAvailable()) {
-        this.reader = readerName;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-Book.prototype.returnBook = function() {
-    if (this.reader !== null) {
-        this.reader = null;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-Book.prototype.changeBookName = function (newBookName) {
-    if (this.name) {
-        this.name = newBookName;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-Book.prototype.changeAuthorName = function (newAuthorName) {
-    if (this.author) {
-        this.author = newAuthorName;
-        return true;
-    } else {
-        return false;
-    }
-}
-
-Book.prototype.getCurrentReader = function () {
-    return this.reader;
 }
 
 
