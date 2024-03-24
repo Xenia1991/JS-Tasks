@@ -1,5 +1,9 @@
 Object.create = function(proto, propertiesObject) {
     let obj = {};
+    if (propertiesObject===null || proto === null) {
+        Object.setPrototypeOf(obj, null);
+        return obj;
+    }
     
     if(!proto && !propertiesObject ||
         typeof(proto) !== 'object' && proto !== null
@@ -7,19 +11,11 @@ Object.create = function(proto, propertiesObject) {
         throw new TypeError('Упс! Вышла ошибочка!');
     }
 
-    if (typeof(proto) === 'object' || proto === null &&
-        propertiesObject && propertiesObject !== undefined 
-    ) {
+    if (propertiesObject !== undefined || propertiesObject !== null) {
         console.log('I am here');
-        obj.__proto__ = proto;
+        Object.setPrototypeOf(obj, proto);
         Object.defineProperties(obj , {...propertiesObject});
     }
-
-    if (propertiesObject === null && proto===null) {
-        obj.__proto__ = proto;
-        return obj;
-    }
-    
     return obj;
 };
 
@@ -36,6 +32,8 @@ objectName: {
 },
 });
 
+const C = Object.create(null, {})
+
 console.log(A.getObjectName());// This is Object A!
 console.log(B.getObjectName());// This is Object B!
 
@@ -44,6 +42,8 @@ console.log(A.hasOwnProperty('objectName'));// true
 
 console.log(B.hasOwnProperty('getObjectName'));// false
 console.log(B.hasOwnProperty('objectName'));// true
+
+console.log(C);
 
 // ; 
 // ; 
